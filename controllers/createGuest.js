@@ -6,7 +6,7 @@ const getGuestName = async (req, res) => {
   if (!guest) {
     res.status(404).json({ message: "Guest not found" });
   } else {
-    res.json(guest);
+    res.status(200).json(guest);
   }
 };
 module.exports = getGuestName;
