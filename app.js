@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 
 const guestRouter = require("./routes/api/guests");
+const checkRouter = require("./routes/api/check");
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use(function (req, res, next) {
 });
 
 app.use("/api/guest", guestRouter);
+app.use("/api", checkRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
